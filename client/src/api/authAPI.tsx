@@ -5,9 +5,9 @@ const login = async (userInfo: UserLogin) => {
     const res = await fetch("/auth/login", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(userInfo)
+      body: JSON.stringify(userInfo),
     });
 
     if (!res.ok) {
@@ -22,6 +22,6 @@ const login = async (userInfo: UserLogin) => {
     console.log("Error from user login:", error);
     return Promise.reject("Could not fetch user info.");
   }
-}
+};
 
 export { login };
